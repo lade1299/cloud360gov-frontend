@@ -255,3 +255,43 @@ body.dashboard {
   background-color: #0056b3;
 }
 
+.compliance-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.compliance-list li {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.compliance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.upload-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compliance | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="compliance-header">
+        <div></div> <!-- Spacer -->
+        <div style="text-align: right;">
+          <div><strong id="usernameDisplay">Welcome, Username</strong></div>
+          <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </div>
+      </div>
+
+      <h2 class="section-title">Compliance Center</h2>
+
+      <div class="cards">
+        <div class="card">Audit Log</div>
+        <div class="card">Security Settings</div>
+        <div class="card">Compliance Certificates</div>
+      </div>
+
+      <div class="upload-btn-wrapper">
+        <button class="upload-btn">+ Upload Certificate</button>
+      </div>
+
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Dummy username logic (could be replaced with session later)
+    document.getElementById("usernameDisplay").innerText = "Welcome, Username";
+  </script>
+</body>
+</html>
+
