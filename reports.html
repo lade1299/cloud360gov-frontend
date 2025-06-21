@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reports | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="#">Compliance</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header with username + back button -->
+      <div class="reports-header">
+        <div></div> <!-- Spacer -->
+        <div style="text-align: right;">
+          <div><strong id="usernameDisplay">Welcome, Username</strong></div>
+          <a href="dashboard.html" class="back-btn">Back to Dashboard</a>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="report-filters">
+        <button onclick="filterReports('Grant Activity')">Grant Activity</button>
+        <button onclick="filterReports('Quarterly')">Quarterly</button>
+        <button onclick="filterReports('Incidents')">Incidents</button>
+      </div>
+
+      <!-- Table Section -->
+      <section>
+        <h2 class="section-title">Reports</h2>
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>Report Title</th>
+              <th>Date Submitted</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody"></tbody>
+        </table>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- JavaScript for dynamic reports and username -->
+  <script>
+    // Simulated logged-in username
+    const loggedInUsername = "Ezekiel"; // This would come from login logic/session in real app
+    document.getElementById("usernameDisplay").textContent = `Welcome, ${loggedInUsername}`;
+
+    const reports = [
+      { title: "Q1 Compliance Report", date: "2025-04-15", status: "Approved", action: "View", category: "Grant Activity" },
+      { title: "Incident Log - March", date: "2025-03-28", status: "Pending", action: "Edit", category: "Incidents" },
+      { title: "Quarterly Budget Review", date: "2024-03-31", status: "Approved", action: "View", category: "Quarterly" },
+      { title: "Incident Response Summary", date: "2024-06-01", status: "Pending", action: "Download", category: "Incidents" },
+      { title: "Grant Utilization Report", date: "2024-05-10", status: "Rejected", action: "Edit", category: "Grant Activity" }
+    ];
+
+    function displayReports(filteredReports) {
+      const tbody = document.getElementById("reportTableBody");
+      tbody.innerHTML = "";
+      filteredReports.forEach(report => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${report.title}</td>
+          <td>${report.date}</td>
+          <td>${report.status}</td>
+          <td><a href="#">${report.action}</a></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function filterReports(category) {
+      const filtered = reports.filter(report => report.category === category);
+      displayReports(filtered);
+    }
+
+    // Initial load with all reports
+    displayReports(reports);
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+body.dashboard {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #e6e6e6;
+  padding: 20px;
+}
+
+.sidebar .logo img {
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 30px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logout {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 30px;
+  background: #eee;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px; /* Add or update this line */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* === Login Page Styles === */
+.login-box {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-box button {
+  padding: 10px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box .links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 40px;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.reports-table th, 
+.reports-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+.reports-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.reports-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.report-filters {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.report-filters {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.report-filters button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.reports-table th, 
+.reports-table td {
+  border: 1px solid #ccc;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+
+.report-filters button {
+  margin: 0 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.report-filters {
+  display: flex;
+  justify-content: center; /* center the buttons horizontally */
+  gap: 30px;                /* space between buttons */
+  margin: 20px 0 30px;      /* spacing above and below */
+}
+
+.report-filters button {
+  padding: 12px 24px;
+  font-size: 17px;
+  border: none;
+  background-color: #eee;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.report-filters button:hover {
+  background-color: #ddd;
+}
+
+.report-filters {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Adjust this for more or less space */
+  margin: 20px 0;
+}
+
+.report-filters button {
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.report-filters button:hover {
+  background-color: #0056b3;
+}
+
+/* Report Filters - Centered and Spaced Buttons */
+.report-filters {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.report-filters button {
+  margin: 0 40px; /* This creates horizontal spacing */
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.report-filters button:hover {
+  background-color: #0056b3;
+}
+
