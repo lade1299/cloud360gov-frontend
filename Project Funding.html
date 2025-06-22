@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Funding | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="settings-header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong>
+          <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </div>
+      </div>
+
+      <h2>Project Funding Center</h2>
+
+      <!-- Funding Overview Cards -->
+      <div class="funding-cards">
+        <div class="funding-card">
+          <h3>Total Funded</h3>
+          <p>$250,000</p>
+        </div>
+        <div class="funding-card">
+          <h3>Pending Approvals</h3>
+          <p>$75,000</p>
+        </div>
+      </div>
+
+      <!-- Funding Table -->
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Amount</th>
+            <th>Date Requested</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Infrastructure Upgrade</td>
+            <td>$100,000</td>
+            <td>2025-05-10</td>
+            <td>Approved</td>
+            <td><a href="#">View</a></td>
+          </tr>
+          <tr>
+            <td>Community Broadband</td>
+            <td>$75,000</td>
+            <td>2025-06-01</td>
+            <td>Pending</td>
+            <td><a href="#">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="save-btn">Request New Funding</button>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+

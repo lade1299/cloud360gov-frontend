@@ -1,4 +1,3 @@
-i<!-- cloud-integration.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@ i<!-- cloud-integration.html -->
 </head>
 <body class="dashboard">
   <div class="dashboard-container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <img src="daveclar-logo.jpeg" alt="Company Logo" />
@@ -21,18 +21,63 @@ i<!-- cloud-integration.html -->
         </ul>
       </nav>
     </aside>
+
+    <!-- Main Content -->
     <main class="main-content">
+      <!-- Header -->
       <div class="settings-header">
         <div></div>
         <div style="text-align: right;">
-          <div><strong id="usernameDisplay">Welcome, Username</strong></div>
-          <a href="settings.html" class="back-btn">← Back to Settings</a>
+          <strong id="usernameDisplay">Welcome, Username</strong><br />
+          <a href="settings.html" class="back-btn">&larr; Back to Settings</a>
         </div>
       </div>
+
       <h2>Cloud Integration</h2>
-      <p>Connect to Microsoft 365, Google Cloud, AWS, or Snowflake (placeholder)</p>
+
+      <!-- Integration Cards -->
+      <div class="integration-grid">
+        <div class="integration-card">
+          <img src="m365.png" alt="Microsoft 365" />
+          <h3>Microsoft 365</h3>
+          <button class="connect-btn">Connect</button>
+        </div>
+        <div class="integration-card">
+          <img src="src/assets/gcp.png" alt="Google Cloud" />
+          <h3>Google Cloud</h3>
+          <button class="connect-btn">Connect</button>
+        </div>
+        <div class="integration-card">
+          <img src="src/assets/azure.png" alt="Azure" />
+          <h3>Microsoft Azure</h3>
+          <button class="connect-btn">Connect</button>
+        </div>
+        <div class="integration-card">
+          <img src="src/assets/snowflake.png" alt="Snowflake" />
+          <h3>Snowflake</h3>
+          <button class="connect-btn">Connect</button>
+        </div>
+      </div>
+
+      <!-- Feedback Message -->
+      <div id="connectionMessage" style="margin-top: 20px; font-weight: bold; color: green;"></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
     </main>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".connect-btn");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.getElementById("connectionMessage").innerText =
+          `Integration initiated! (Backend logic to be implemented)`;
+      });
+    });
+  </script>
 </body>
 </html>
 

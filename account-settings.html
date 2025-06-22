@@ -1,4 +1,3 @@
-<!-- account-settings.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
 </head>
 <body class="dashboard">
   <div class="dashboard-container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <img src="daveclar-logo.jpeg" alt="Company Logo" />
@@ -21,25 +21,40 @@
         </ul>
       </nav>
     </aside>
+
+    <!-- Main Content -->
     <main class="main-content">
+      <!-- Header -->
       <div class="settings-header">
-        <div></div>
+        <div></div> <!-- spacer -->
         <div style="text-align: right;">
           <div><strong id="usernameDisplay">Welcome, Username</strong></div>
           <a href="settings.html" class="back-btn">← Back to Settings</a>
         </div>
       </div>
+
       <h2>Account Settings</h2>
-      <form class="form-section">
-        <label>Email:</label>
-        <input type="email" placeholder="your@email.com" />
-        <label>Change Password:</label>
-        <input type="password" placeholder="New Password" />
-        <label>Profile Photo:</label>
-        <input type="file" />
-        <button class="save-btn">Save Changes</button>
+
+      <!-- Form -->
+      <form class="account-form">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter new email" />
+
+        <label for="password">New Password</label>
+        <input type="password" id="password" placeholder="Enter new password" />
+
+        <label for="profilePhoto">Profile Photo</label>
+        <input type="file" id="profilePhoto" />
+
+        <button type="submit" class="save-btn">Save Changes</button>
       </form>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
     </main>
   </div>
 </body>
 </html>
+

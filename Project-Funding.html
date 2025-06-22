@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Funding | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <div class="reports-header">
+        <div></div>
+        <div style="text-align: right;">
+          <div><strong id="usernameDisplay">Welcome, Username</strong></div>
+         <div><a href="dashboard.html" class="back-btn">← Back to Dashboard</a></div>
+        </div>
+      </div>
+
+      <h2>Project Funding</h2>
+
+      <p>
+        This section provides an overview of grant and funding requests across the organization.
+        You can track approvals, pending funding applications, and available budget allocations.
+      </p>
+
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Requested Amount</th>
+            <th>Approved Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="fundingTableBody">
+          <!-- Populated dynamically via JavaScript -->
+        </tbody>
+
+      </table>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+  </footer>
+</body>
+</html>
+
+<script>
+  const fundingData = [
+    {
+      project: "Cloud Security Upgrade",
+      amount: "$75,000",
+      status: "Approved",
+      date: "2025-06-15"
+    },
+    {
+      project: "Disaster Recovery Backup",
+      amount: "$30,000",
+      status: "Pending",
+      date: "2025-07-01"
+    },
+    {
+      project: "School WiFi Modernization",
+      amount: "$45,500",
+      status: "Rejected",
+      date: "2025-05-12"
+    }
+  ];
+
+  const tbody = document.getElementById("fundingTableBody");
+  fundingData.forEach(entry => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${entry.project}</td>
+      <td>${entry.amount}</td>
+      <td>${entry.status}</td>
+      <td>${entry.date}</td>
+    `;
+    tbody.appendChild(row);
+  });
+</script>
+

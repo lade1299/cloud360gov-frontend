@@ -7,6 +7,7 @@
 </head>
 <body class="dashboard">
   <div class="dashboard-container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="logo">
         <img src="daveclar-logo.jpeg" alt="Company Logo" />
@@ -20,17 +21,71 @@
         </ul>
       </nav>
     </aside>
+
+    <!-- Main Content -->
     <main class="main-content">
       <div class="settings-header">
         <div></div>
         <div style="text-align: right;">
-          <div><strong id="usernameDisplay">Welcome, Username</strong></div>
-          <a href="settings.html" class="back-btn">← Back to Settings</a>
+         <div><strong id="usernameDisplay">Welcome, Username</strong></div>
+          <div><a href="settings.html" class="back-btn">← Back to Settings</a></div>
         </div>
       </div>
+
       <h2>User Permissions</h2>
-      <p>Manage users and roles (placeholder)</p>
+
+      <button class="add-user-btn" onclick="toggleForm()">+ Add User</button>
+
+      <div id="userForm" class="user-form" style="display:none;">
+        <h3>Add New User</h3>
+        <form onsubmit="return validateUserForm()">
+          <label>First Name</label>
+          <input type="text" id="firstName" required>
+
+          <label>Last Name</label>
+          <input type="text" id="lastName" required>
+
+          <label>Email</label>
+          <input type="email" id="email" required>
+
+          <label>Phone</label>
+          <input type="tel" id="phone" required>
+
+          <label>Username</label>
+          <input type="text" id="newUsername" required>
+
+          <label>Password</label>
+          <input type="password" id="password" required>
+
+          <label>Role</label>
+          <select id="role" required>
+            <option value="">Select role</option>
+            <option>Admin</option>
+            <option>Manager</option>
+            <option>Viewer</option>
+          </select>
+
+          <button type="submit">Create User</button>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
     </main>
   </div>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById("userForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    function validateUserForm() {
+      alert("User created successfully! (Functionality to be integrated with backend)");
+      return false; // Prevent real submission
+    }
+  </script>
 </body>
 </html>
+
