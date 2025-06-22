@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compliance Certificates | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function uploadCertificate() {
+      alert("Upload started! (Functionality to be implemented with backend)");
+    }
+  </script>
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="settings-header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong><br>
+          <a href="compliance.html" class="back-btn">← Back to Compliance</a>
+        </div>
+      </div>
+      <h2>Compliance Certificates</h2>
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Certificate Name</th>
+            <th>Issuer</th>
+            <th>Date Issued</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CJIS Compliance</td>
+            <td>FBI</td>
+            <td>2024-10-12</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>FedRAMP Moderate</td>
+            <td>GSA</td>
+            <td>2023-05-10</td>
+            <td>Expired</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="text-align: right; margin-top: 20px;">
+        <button onclick="uploadCertificate()" class="save-btn">+ Upload Certificate</button>
+      </div>
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

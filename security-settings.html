@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security Settings | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="settings-header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong><br />
+          <a href="compliance.html" class="back-btn">← Back to Compliance</a>
+        </div>
+      </div>
+
+      <h2>Security Settings</h2>
+
+      <form class="form-section">
+        <label>Password Policy:
+          <select>
+            <option>Strong</option>
+            <option>Medium</option>
+            <option>Weak</option>
+          </select>
+        </label>
+
+        <label>2FA Enabled:
+          <select>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </label>
+
+        <label>Session Timeout:
+          <select>
+            <option>15 minutes</option>
+            <option>30 minutes</option>
+            <option>1 hour</option>
+          </select>
+        </label>
+
+        <label>Account Lockout:
+          <select>
+            <option>After 5 failed logins</option>
+            <option>After 3 failed logins</option>
+            <option>Disabled</option>
+          </select>
+        </label>
+
+        <button class="save-btn" type="submit">Save Settings</button>
+      </form>
+
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
+

@@ -557,3 +557,56 @@ input:checked + .slider:before {
   border-color: #1a73e8;
 }
 
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.reports-table th,
+.reports-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.reports-table th {
+  background-color: #f0f0f0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+a.back-btn {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+a.back-btn:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+}
+

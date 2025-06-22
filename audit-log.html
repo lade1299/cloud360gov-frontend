@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audit Log | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="settings-header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong><br>
+          <a href="compliance.html" class="back-btn">← Back to Compliance</a>
+        </div>
+      </div>
+      <h2>Audit Log</h2>
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>User</th>
+            <th>Action</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-06-22 09:00</td>
+            <td>admin@agency.gov</td>
+            <td>Logged in</td>
+            <td>192.168.1.101</td>
+          </tr>
+          <tr>
+            <td>2025-06-22 09:10</td>
+            <td>security@agency.gov</td>
+            <td>Viewed reports</td>
+            <td>192.168.1.102</td>
+          </tr>
+        </tbody>
+      </table>
+      <footer class="footer">
+        <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -35,14 +35,28 @@
       <h2 class="section-title">Compliance Center</h2>
 
       <div class="cards">
-        <div class="card">Audit Log</div>
-        <div class="card">Security Settings</div>
-        <div class="card">Compliance Certificates</div>
-      </div>
+       <a href="audit-log.html" class="card">Audit Log</a>
+       <a href="security-settings.html" class="card">Security Settings</a>
+       <a href="compliance-certificates.html" class="card">Compliance Certificates</a>
+     </div>
+
 
       <div class="upload-btn-wrapper">
-        <button class="upload-btn">+ Upload Certificate</button>
-      </div>
+       <label for="file-upload" class="upload-btn">+ Quick Upload Certificate</label>
+       <input type="file" id="file-upload" style="display: none" onchange="uploadFile()" />
+     </div>
+
+    <script>
+      function uploadFile() {
+        const fileInput = document.getElementById('file-upload');
+        if (fileInput.files.length > 0) {
+          alert(`Uploaded: ${fileInput.files[0].name} (Functionality to be wired to backend)`);
+      }
+    }
+
+    document.getElementById("usernameDisplay").innerText = "Welcome, Username";
+  </script>
+
 
       <footer class="footer">
         <p>Built by <strong>Daveclar Cloud Solutions</strong></p>

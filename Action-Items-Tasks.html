@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Action Items | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong><br />
+          <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </div>
+      </div>
+
+      <h2>Action Items / Tasks</h2>
+
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="taskTableBody"></tbody>
+      </table>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+  </footer>
+
+  <script>
+    const tasks = [
+      {
+        task: "Complete Compliance Checklist",
+        due: "2025-07-10",
+        assignee: "Jane Doe",
+        status: "Pending"
+      },
+      {
+        task: "Submit Quarterly Grant Report",
+        due: "2025-07-01",
+        assignee: "Michael Smith",
+        status: "Completed"
+      },
+      {
+        task: "Review Vendor Contract",
+        due: "2025-06-30",
+        assignee: "Sarah Johnson",
+        status: "In Progress"
+      }
+    ];
+
+    const tableBody = document.getElementById("taskTableBody");
+
+    tasks.forEach(item => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.task}</td>
+        <td>${item.due}</td>
+        <td>${item.assignee}</td>
+        <td>${item.status}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // Simulate dynamic username
+    const username = localStorage.getItem("username") || "Username";
+    document.getElementById("usernameDisplay").textContent = `Welcome, ${username}`;
+  </script>
+</body>
+</html>
+

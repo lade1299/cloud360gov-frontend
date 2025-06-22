@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reporting Deadlines | Cloud360Gov</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="daveclar-logo.jpeg" alt="Company Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="compliance.html">Compliance</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div></div>
+        <div style="text-align: right;">
+          <strong id="usernameDisplay">Welcome, Username</strong><br />
+          <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+        </div>
+      </div>
+
+      <h2>Reporting Deadlines</h2>
+
+      <table class="reports-table">
+        <thead>
+          <tr>
+            <th>Report Name</th>
+            <th>Due Date</th>
+            <th>Responsible</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="deadlinesTableBody"></tbody>
+      </table>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>Built by <strong>Daveclar Cloud Solutions</strong></p>
+  </footer>
+
+  <script>
+    const deadlines = [
+      {
+        name: "Annual Financial Statement",
+        due: "2025-09-30",
+        responsible: "Finance Team",
+        status: "Not Started"
+      },
+      {
+        name: "Grant Compliance Summary",
+        due: "2025-07-15",
+        responsible: "Grants Department",
+        status: "In Progress"
+      },
+      {
+        name: "IT Risk Assessment",
+        due: "2025-08-10",
+        responsible: "IT Department",
+        status: "Completed"
+      }
+    ];
+
+    const tableBody = document.getElementById("deadlinesTableBody");
+
+    deadlines.forEach(item => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.due}</td>
+        <td>${item.responsible}</td>
+        <td>${item.status}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // Show dynamic username
+    const username = localStorage.getItem("username") || "Username";
+    document.getElementById("usernameDisplay").textContent = `Welcome, ${username}`;
+  </script>
+</body>
+</html>
+
