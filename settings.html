@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Settings | Cloud360Gov</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dashboard">
+<!-- Hamburger Menu (visible on small screens) -->
+<div class="hamburger-menu" onclick="toggleSidebar()">☰</div>
+
   <div class="dashboard-container">
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="logo">
         <img src="daveclar-logo.jpeg" alt="Company Logo" />
       </div>
@@ -66,6 +70,13 @@
       </footer>
     </main>
   </div>
+ <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("sidebar-active");
+  }
+</script>
+
 </body>
 </html>
 
