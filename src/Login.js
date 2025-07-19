@@ -1,36 +1,53 @@
+import { loginUser } from "./api.js";
 
-export default function Login() {
-  const container = document.createElement('div');
-  container.className = 'login-container';
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
 
-  const logo = document.createElement('img');
-  logo.src = '/public/logo.jpeg';
-  logo.alt = 'Company Logo';
-  logo.className = 'logo';
-  document.body.appendChild(logo);
+  // Add message element once
+  let message = document.createElement("p");
+  message.style.color = "red";
+  loginForm.appendChild(message);
 
-  const heading = document.createElement('h1');
-  heading.innerText = 'Cloud360Gov';
-  container.appendChild(heading);
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const username = document.createElement('input');
-  username.type = 'text';
-  username.placeholder = 'Username';
-  container.appendChild(username);
+    try {
+      const result = await loginUser(usernameInput.value, passwordInput.value);
+      if (result.access_token) {
+        message.style.color = "green";
+        message.innerText = "Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      message.innerText = error.message;
+    }
+  });
 
-  const password = document.createElement('input');
-  password.type = 'password';
-  password.placeholder = 'Password';
-  container.appendChild(password);
+  // Handle "Create account" link
+  const createAccountLink = document.getElementById("create-account-link");
+  if (createAccountLink) {
+    createAccountLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "register.html";
+    });
+  } else {
+    console.error("Create account link not found!");
+  }
 
-  const button = document.createElement('button');
-  button.innerText = 'Sign In';
-  container.appendChild(button);
+  // Handle "Forgot password" link
+  const forgotPasswordLink = document.getElementById("forgot-password-link");
+  if (forgotPasswordLink) {
+    forgotPasswordLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "forgot-password.html";
+    });
+  } else {
+    console.error("Forgot password link not found!");
+  }
+});
 
-  const linksDiv = document.createElement('div');
-  linksDiv.className = 'links';
-  linksDiv.innerHTML = '<a href="#">Forgot password?</a><a href="#">Create account</a>';
-  container.appendChild(linksDiv);
-
-  return container;
-}

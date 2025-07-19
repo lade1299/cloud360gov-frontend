@@ -1,9 +1,17 @@
-const API_BASE_URL = "http://127.0.0.1:8000"; // update if backend URL is different
+const API_BASE_URL = "http://127.0.0.1:8000"; // Update for production
 
 let accessToken = null;
 
 export function setToken(token) {
     accessToken = token;
+    localStorage.setItem("access_token", token);
+}
+
+export function getToken() {
+    if (!accessToken) {
+        accessToken = localStorage.getItem("access_token");
+    }
+    return accessToken;
 }
 
 export async function registerUser(userData) {
@@ -14,6 +22,12 @@ export async function registerUser(userData) {
         },
         body: JSON.stringify(userData)
     });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Registration failed");
+    }
+
     return await response.json();
 }
 
@@ -31,6 +45,10 @@ export async function loginUser(username, password) {
     });
 
     const data = await response.json();
+    if (!response.ok) {
+        throw new Error(data.detail || "Login failed");
+    }
+
     if (data.access_token) {
         setToken(data.access_token);
     }
@@ -40,18 +58,30 @@ export async function loginUser(username, password) {
 export async function fetchUsers() {
     const response = await fetch(`${API_BASE_URL}/users`, {
         headers: {
-            Authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${getToken()}`
         }
     });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Failed to fetch users");
+    }
+
     return await response.json();
 }
 
 export async function fetchProjects() {
     const response = await fetch(`${API_BASE_URL}/projects`, {
         headers: {
-            Authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${getToken()}`
         }
     });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Failed to fetch projects");
+    }
+
     return await response.json();
 }
 
@@ -60,31 +90,31 @@ export async function createProject(projectData) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${getToken()}`
         },
         body: JSON.stringify(projectData)
     });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Failed to create project");
+    }
+
     return await response.json();
 }
 
 export async function fetchReports() {
     const response = await fetch(`${API_BASE_URL}/reports`, {
         headers: {
-            Authorization: `Bearer ${accessToken}`
+            Authorization: `Bearer ${getToken()}`
         }
     });
-    return await response.json();
-}
 
-export async function createReport(reportData) {
-    const response = await fetch(`${API_BASE_URL}/reports`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${accessToken}`
-        },
-        body: JSON.stringify(reportData)
-    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Failed to fetch reports");
+    }
+
     return await response.json();
 }
 
