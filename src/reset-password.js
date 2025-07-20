@@ -1,4 +1,4 @@
-// src/reset-password.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("reset-password-form");
   const messageDiv = document.getElementById("reset-message");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newPassword = document.getElementById("new-password").value;
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/reset-password", {
+      const response = await fetch("https://api.cloud360gov.com/auth/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
