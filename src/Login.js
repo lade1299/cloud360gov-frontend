@@ -50,4 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Forgot password link not found!");
   }
 });
-
