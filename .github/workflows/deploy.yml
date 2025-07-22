@@ -19,8 +19,6 @@ jobs:
           args: >
             --acl public-read 
             --delete 
-            --exclude ".git/*" 
-            --exclude ".github/*" 
             --exclude ".DS_Store" 
             --exclude "*.yml" 
             --exclude "*.yaml" 
