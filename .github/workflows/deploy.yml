@@ -20,8 +20,6 @@ jobs:
           args: >
             --acl public-read
             --delete
-            --exclude ".git/*"
-            --exclude ".github/*"
             --exclude "*.yml"
             --exclude "*.yaml"
             --exclude "README.md"
