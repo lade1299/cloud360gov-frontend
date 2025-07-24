@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value.trim();
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/request-password-reset", {
+      const response = await fetch("https://cloud360gov-backend.onrender.com/auth/request-password-reset", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
