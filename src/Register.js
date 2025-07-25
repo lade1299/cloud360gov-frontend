@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       await registerUser(userData);
       messageDiv.style.color = "green";
       messageDiv.innerText = "Registration successful! Redirecting...";
+    
+      form.reset();
 
       setTimeout(() => {
         window.location.href = "index.html";
