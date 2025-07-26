@@ -31,7 +31,7 @@ export async function registerUser(userData) {
     return await response.json();
 }
 
-export async function loginUser(username, password) {
+export async function loginUser({ username, password }) {
     const formData = new URLSearchParams();
     formData.append("username", username);
     formData.append("password", password);
@@ -41,10 +41,11 @@ export async function loginUser(username, password) {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: formData
+        body: formData.toString()  // ✅ important
     });
 
     const data = await response.json();
+
     if (!response.ok) {
         throw new Error(data.detail || "Login failed");
     }
@@ -52,8 +53,10 @@ export async function loginUser(username, password) {
     if (data.access_token) {
         setToken(data.access_token);
     }
+
     return data;
 }
+
 
 export async function fetchUsers() {
     const response = await fetch(`${API_BASE_URL}/users`, {

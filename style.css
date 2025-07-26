@@ -837,3 +837,22 @@ footer.footer {
   cursor: pointer;
 }
 
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  position: relative;
+}
+
+.password-wrapper input[type="password"] {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.password-wrapper .toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+

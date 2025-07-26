@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     try {
-      const result = await loginUser(usernameInput.value, passwordInput.value);
+      const result = await loginUser({
+        username: usernameInput.value,
+        password: passwordInput.value
+      });
       if (result.access_token) {
         message.style.color = "green";
         message.innerText = "Login successful! Redirecting...";
