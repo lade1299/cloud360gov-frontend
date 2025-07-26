@@ -1,7 +1,4 @@
 
-**✅ Finalized `register.js` (in `src/register.js`)**
-
-```javascript
 import { registerUser } from "./api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
