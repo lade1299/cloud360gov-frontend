@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newPassword = document.getElementById("new-password").value;
 
     try {
-      const response = await fetch("https://api.cloud360gov.com/auth/reset-password", {
+      const response = await fetch("https://cloud360gov-backend.onrender.com/auth/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
