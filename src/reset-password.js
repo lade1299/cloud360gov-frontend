@@ -1,45 +1,36 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("reset-password-form");
-  const messageDiv = document.getElementById("reset-message");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const newPassword = document.getElementById("new-password").value;
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get("token");
+  try {
+    const response = await fetch("https://cloud360gov-backend.onrender.com/reset-password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ token, new_password: newPassword })
+    });
 
-  if (!token) {
-    messageDiv.innerText = "Reset link is missing or invalid.";
-    messageDiv.style.color = "red";
-    return;
-  }
+    const data = await response.json();
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const newPassword = document.getElementById("new-password").value;
-
-    try {
-      const response = await fetch("https://cloud360gov-backend.onrender.com/auth/reset-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ token, new_password: newPassword })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.detail || "Password reset failed.");
+    if (!response.ok) {
+      let errorDetail = data.detail;
+      if (Array.isArray(errorDetail)) {
+        errorDetail = errorDetail.map(err => err.msg).join(", ");
       }
-
-      messageDiv.innerText = "Password reset successful! Redirecting to login...";
-      messageDiv.style.color = "green";
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
-    } catch (error) {
-      console.error("Reset Error:", error);
-      messageDiv.innerText = error.message;
-      messageDiv.style.color = "red";
+      throw new Error(errorDetail || "Password reset failed.");
     }
-  });
+
+    messageDiv.innerText = "Password reset successful! Redirecting to login...";
+    messageDiv.style.color = "green";
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  } catch (error) {
+    console.error("Reset Error:", error);
+    messageDiv.innerText = error.message || "Something went wrong.";
+    messageDiv.style.color = "red";
+  }
 });
+
