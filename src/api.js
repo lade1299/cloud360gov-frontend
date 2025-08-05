@@ -121,3 +121,18 @@ export async function fetchReports() {
     return await response.json();
 }
 
+export async function fetchDocuments() {
+    const response = await fetch(`${API_BASE_URL}/documents`, {
+        headers: {
+            Authorization: `Bearer ${getToken()}`
+        }
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Failed to fetch documents");
+    }
+
+    return await response.json();
+}
+
